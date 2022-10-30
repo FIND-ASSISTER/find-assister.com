@@ -1,64 +1,62 @@
-# Astro Starter Kit: Blog
+# Welcome to Remix!
 
-```
-npm create astro@latest -- --template blog
-```
+- [Remix Docs](https://remix.run/docs)
+- [Netlify Functions](https://www.netlify.com/products/functions/)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
+## Netlify Setup
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Install the [Netlify CLI](https://www.netlify.com/products/dev/):
 
-
-![blog](https://user-images.githubusercontent.com/4677417/186189140-4ef17aac-c3c9-4918-a8c2-ce86ba1bb394.png)
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-├── public/
-├── src/
-│   ├── components/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+```sh
+npm i -g netlify-cli
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+If you have previously installed the Netlify CLI, you should update it to the latest version:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```sh
+npm i -g netlify-cli@latest
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+2. Sign up and log in to Netlify:
 
-## 🧞 Commands
+```sh
+netlify login
+```
 
-All commands are run from the root of the project, from a terminal:
+3. Create a new site:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+```sh
+netlify init
+```
 
-## 👀 Want to learn more?
+## Development
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The Remix dev server starts your app in development mode, rebuilding assets on file changes. To start the Remix dev server:
 
-## Credit
+```sh
+npm run dev
+```
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
+
+The Netlify CLI builds a production version of your Remix App Server and splits it into Netlify Functions that run locally. This includes any custom Netlify functions you've developed. The Netlify CLI runs all of this in its development mode.
+
+```sh
+netlify dev
+```
+
+Open up [http://localhost:3000](http://localhost:3000), and you should be ready to go!
+
+Note: When running the Netlify CLI, file changes will rebuild assets, but you will not see the changes to the page you are on unless you do a browser refresh of the page. Due to how the Netlify CLI builds the Remix App Server, it does not support hot module reloading.
+
+## Deployment
+
+There are two ways to deploy your app to Netlify, you can either link your app to your git repo and have it auto deploy changes to Netlify, or you can deploy your app manually. If you've followed the setup instructions already, all you need to do is run this:
+
+```sh
+# preview deployment
+netlify deploy --build
+
+# production deployment
+netlify deploy --build --prod
+```
