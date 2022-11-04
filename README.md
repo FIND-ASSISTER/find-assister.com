@@ -1,3 +1,7 @@
+# Find Assister
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b6c54723-b977-458c-948f-e73bf4a25952/deploy-status)](https://app.netlify.com/sites/find-assister/deploys)
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)
