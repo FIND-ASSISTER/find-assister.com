@@ -22,13 +22,13 @@ export function links() {
 
 export default function App() {
   return (
-    <html lang="pt-BR" className="bg-white dark:bg-gray-800">
+    <html lang="pt-BR" className="dark">
       <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
         <Meta />
         <Links />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" />
       </head>
-      <body className="flex">
+      <body className="flex bg-white dark:bg-gray-800">
         <SideBar />
         <Outlet />
         <ScrollRestoration />
